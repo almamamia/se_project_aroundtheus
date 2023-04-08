@@ -1,21 +1,30 @@
 # Project 3: Around The U.S.
 
-### Overview  
+### Overview
 
-* Intro  
-* Figma  
-* Images  
-  
+- Intro
+- Figma
+- Images
+- Github
+
 **Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+
+This is the third project at Software Egineering program at Practicum. It was to practice making responsive webpage based off figma design layouts as previewed below.
+
+This project was followed by BEM structure with the media queries and the responsive design layouts using HTML and CSS.
+
+**Figma**
+
+- [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)
+
+**Images**
+
+This the product design layout for the project.
+
+![alt text](<./images/MAIN%20PAGE%20(1).png>)
+
+**Github**
+
+- [Link to the project on Github](https://github.com/almamamia/se_project_aroundtheus)
+
+Thank you for taking the time to check and reading!
