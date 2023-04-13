@@ -26,6 +26,6 @@ This the product design layout for the project.
 **Github**
 
 - [Link to the project on Github](https://github.com/almamamia/se_project_aroundtheus)
+- [Deployed page link] (https://almamamia.github.io/se_project_aroundtheus/)
 
-Thank you for taking the time to check and reading!
-My bad - fonts are added now!
+Thank you for the notes! Hope I didn't miss anything!

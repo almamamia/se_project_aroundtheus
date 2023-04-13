@@ -12,12 +12,7 @@
   grid-gap: 20px 17px;
 }
 
-@media screen and (max-width: 480px) {
-  .cards__list {
-    justify-content: center;
-  }
-}
-@media screen and (min-width: 481px) and (max-width: 880px) {
+@media screen and (max-width: 880px) {
   .cards__list {
     justify-content: center;
   }
