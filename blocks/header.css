@@ -2,15 +2,8 @@
   margin-top: 45px;
   max-width: 880px;
   padding-bottom: 41px;
-  border-bottom: 1px solid rgba(84, 84, 84, 1);
-  opacity: 1;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
-
-/* .header__line {
-  margin-top: 41px;
-  border-bottom: 1px solid rgba(84, 84, 84, 1);
-  opacity: 1;
-} */
 
 @media screen and (max-width: 480px) {
   .header__line {

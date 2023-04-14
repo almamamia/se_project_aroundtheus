@@ -4,9 +4,7 @@
   justify-content: space-evenly;
   flex-direction: column;
   flex-wrap: nowrap;
-
   border-radius: 10px;
-  white-space: nowrap;
 }
 
 .card__image {
