@@ -28,4 +28,4 @@ This the product design layout for the project.
 - [Link to the project on Github](https://github.com/almamamia/se_project_aroundtheus)
 - [Deployed page link] (https://almamamia.github.io/se_project_aroundtheus/)
 
-Thank you for the notes! Hope I didn't miss anything!
+Thank you SO MUCH for the notes again!
