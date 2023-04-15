@@ -6,8 +6,8 @@
 }
 
 @media screen and (max-width: 480px) {
-  .header__line {
-    margin-top: 32px;
+  .header {
+    padding-bottom: 32px;
   }
 }
 
