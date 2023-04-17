@@ -1,0 +1,111 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 19px;
+  z-index: 999;
+  display: flex;
+}
+
+.model_opened {
+  display: none;
+}
+
+.modal__container {
+  position: relative;
+  background-color: #fff;
+  margin: auto;
+  padding: 36px;
+  border-radius: 10px;
+
+  max-width: 430px;
+  width: calc(100% - 850px);
+}
+
+.modal__close {
+  border: none;
+  padding: none;
+
+  position: absolute;
+  left: calc(100% + 5px);
+  bottom: calc(100% + 6px);
+  width: 40px;
+  height: 40px;
+
+  background-image: url(../images/Close_icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal__heading {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: left;
+  color: #000;
+  max-width: 330px;
+
+  margin: 0;
+  padding-bottom: 54px;
+}
+
+.modal__form {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.modal__form-title {
+  width: 100%;
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.input[type="text"] {
+  padding-bottom: 14px;
+}
+
+.modal__form-subtitle {
+  padding: none;
+  width: 100%;
+
+  padding-top: 57px;
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.modal__button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+
+  padding: 14px 160px;
+  margin-top: 48px;
+
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+}
