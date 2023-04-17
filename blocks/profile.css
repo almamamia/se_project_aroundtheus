@@ -114,7 +114,9 @@
 
   .profile__add-button {
     margin: 36px 19px;
-    width: 282px;
+    margin-bottom: 0;
+    max-width: 282px;
+    width: 100%;
     align-self: center;
   }
 }
@@ -124,8 +126,15 @@
     padding-left: 24px;
     padding-right: 24px;
   }
+  .profile__info {
+    grid-template-columns: minmax(auto, 300px) auto;
+  }
 
   .profile__subtitle {
     align-self: flex-start;
+  }
+
+  .profile__add-button {
+    max-width: 50px;
   }
 }

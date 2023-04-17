@@ -10,7 +10,7 @@
   display: flex;
 }
 
-.model_opened {
+.modal_opened {
   display: none;
 }
 
@@ -21,8 +21,7 @@
   padding: 36px;
   border-radius: 10px;
 
-  max-width: 430px;
-  /* width: calc(100% - 850px); */
+  width: 430px;
 }
 
 .modal__close {
@@ -78,7 +77,8 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.input[type="text"] {
+input::placeholder {
+  height: 27px;
   padding-bottom: 14px;
 }
 
@@ -99,6 +99,7 @@
   color: #fff;
   border: none;
   text-decoration: none;
+  width: 100%;
 
   padding: 14px 160px;
   margin-top: 48px;
@@ -113,6 +114,8 @@
 @media screen and (max-width: 480px) {
   .modal__container {
     max-width: 282px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .modal__heading {
@@ -121,6 +124,7 @@
   .modal__button {
     padding: 14px 100px;
     font-size: 14px;
+    max-width: 238px;
   }
 }
 
