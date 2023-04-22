@@ -69,7 +69,7 @@
   text-align: left;
 }
 
-.modal__form-title {
+.modal__input-name {
   width: 100%;
 
   border-top: none;
@@ -78,15 +78,11 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* input::placeholder {
-  height: 27px;
-  padding-bottom: 14px;
-} */
 input {
   height: 27px;
 }
 
-.modal__form-subtitle {
+.modal__input-description {
   padding: none;
   width: 100%;
 
@@ -116,12 +112,6 @@ input {
 }
 
 @media screen and (max-width: 480px) {
-  /* .modal__container {
-    max-width: 282px;
-    width: 100%;
-    box-sizing: border-box;
-  } */
-
   .modal__heading {
     font-size: 18px;
   }
