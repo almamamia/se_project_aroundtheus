@@ -11,6 +11,8 @@
 
 .profile__info {
   margin-left: 30px;
+  margin-right: 30px;
+
   display: grid;
   grid-template-areas: "title button" "subtitle subtitle";
   grid-template-columns: minmax(25px, 373px) auto;
@@ -91,7 +93,7 @@
 
   .profile__info {
     margin: 0;
-    grid-template-columns: minmax(auto, 196px) 25px;
+    grid-template-columns: auto 25px;
     margin-top: 26.25px;
     grid-gap: 14px 10px;
   }
@@ -127,7 +129,7 @@
     padding-right: 24px;
   }
   .profile__info {
-    grid-template-columns: minmax(auto, 300px) auto;
+    grid-template-columns: minmax(auto, 250px) auto;
   }
 
   .profile__description {
