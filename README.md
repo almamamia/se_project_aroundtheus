@@ -27,3 +27,7 @@ This the product design layout for the project.
 
 - [Link to the project on Github](https://github.com/almamamia/se_project_aroundtheus)
 - [Deployed page link] (https://almamamia.github.io/se_project_aroundtheus/)
+
+Hello,
+
+I see that error on
