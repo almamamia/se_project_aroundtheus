@@ -54,6 +54,11 @@
   padding: 0;
 }
 
+.card__delete-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .card__like-button {
   flex-shrink: 0;
   width: 21px;

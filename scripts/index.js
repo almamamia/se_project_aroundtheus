@@ -24,7 +24,7 @@ let initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
-
+//========================elements==========================\\
 //profile edit elements
 const profileEditBtn = document.querySelector(".profile__edit-button");
 const porfileEditModal = document.querySelector("#profile-edit-modal");
@@ -50,10 +50,11 @@ const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 const cardListEl = document.querySelector(".cards__list");
 
+//Preview Image Modal
 const previewImageModal = document.querySelector("#preview-image-modal");
 const previewImageCloseBtn = previewImageModal.querySelector(".modal__close");
 
-//functions
+//================functions======================\\
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
@@ -118,8 +119,8 @@ function handleAddCardSubmit(e) {
   closeModal(addCardModal);
 }
 
-//event listeners
-
+//==============================event listeners===========================\\
+//profile edit
 profileEditBtn.addEventListener("click", () => {
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
@@ -129,14 +130,18 @@ profileEditBtn.addEventListener("click", () => {
 profileCloseBtn.addEventListener("click", () => {
   closeModal(porfileEditModal);
 });
+
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+
 //add new card
 addCardBtn.addEventListener("click", () => {
   openModal(addCardModal);
 });
+
 addCardCloseBtn.addEventListener("click", () => {
   closeModal(addCardModal);
 });
+
 addCardForm.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach((cardData) => {
