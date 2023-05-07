@@ -69,7 +69,8 @@
   text-align: left;
 }
 
-.modal__input-name {
+.modal__input-name,
+.modal__input-title {
   width: 100%;
 
   border-top: none;
@@ -82,7 +83,8 @@ input {
   height: 27px;
 }
 
-.modal__input-description {
+.modal__input-description,
+.modal__input-link {
   padding: none;
   width: 100%;
 
