@@ -63,14 +63,14 @@
           <input
             type="text"
             name="name"
-            class="modal__input-name"
+            class="modal__input modal__input-name"
             placeholder="Name"
             id="form-input-name"
           />
           <input
             type="text"
             name="description"
-            class="modal__input-description"
+            class="modal__input modal__input-description"
             placeholder="Description"
             id="form-input-description"
           />
@@ -88,14 +88,14 @@
           <input
             type="text"
             name="title"
-            class="modal__input-title"
+            class="modal__input modal__input-title"
             placeholder="Title"
             id="form-input-title"
           />
           <input
             type="text"
             name="link"
-            class="modal__input-link"
+            class="modal__input modal__input-link"
             placeholder="Image link"
             id="form-input-link"
           />
@@ -104,8 +104,22 @@
       </div>
     </div>
 
+    <!--Preview Image modal-->
+    <div class="modal" id="preview-image-modal">
+      <div class="modal__preview-container">
+        <button class="modal__close" type="button"></button>
+        <img src="" alt="" class="modal__preview-image" />
+        <h4 class="modal__preview-name"></h3>
+      </div>
+    </div>
+
     <template id="card-template">
       <li class="card">
+        <button
+          class="card__delete-button"
+          type="button"
+          aria-label="delete"
+        ></button>
         <img src="" alt="" class="card__image" />
         <div class="card__description">
           <h2 class="card__title"></h2>
