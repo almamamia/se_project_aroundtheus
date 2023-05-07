@@ -24,7 +24,7 @@
   position: relative;
   background-color: #fff;
   margin: auto;
-  padding: 36px;
+  padding: 22px;
   border-radius: 10px;
 
   width: 430px;
@@ -126,6 +126,16 @@ input {
   text-align: center;
 }
 
+.modal__button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 .modal__preview-name {
   margin: 0;
 
@@ -146,6 +156,10 @@ input {
     font-size: 14px;
     max-width: 238px;
   }
+
+  .modal__input-link {
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width: 630px) {
@@ -154,5 +168,10 @@ input {
     bottom: calc(100% + 13px);
     width: 26px;
     height: 26px;
+  }
+
+  .modal__close_preview-image {
+    left: 100%;
+    bottom: calc(100% + 5px);
   }
 }
