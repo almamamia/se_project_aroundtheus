@@ -1,4 +1,4 @@
-let initialCards = [
+const initialCards = [
   {
     name: "Yosemite Valley",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
@@ -103,6 +103,17 @@ function getCardElement(cardData) {
 }
 
 //event handlers
+function fillProfileForm(e) {
+  console.log(profileName.textContent);
+  profileNameInput.value = profileName.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
+}
+
+function openEditProfileModal() {
+  fillProfileForm();
+  openModal(porfileEditModal);
+}
+
 function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileName.textContent = profileNameInput.value;
@@ -112,20 +123,16 @@ function handleProfileEditSubmit(e) {
 
 function handleAddCardSubmit(e) {
   e.preventDefault();
-  //new card to the inital card array
   const name = cardTitleInput.value;
   const link = cardImageInput.value;
   renderCard({ name, link }, cardListEl);
   closeModal(addCardModal);
+  addCardForm.reset();
 }
 
 //==============================event listeners===========================\\
 //profile edit
-profileEditBtn.addEventListener("click", () => {
-  profileNameInput.value = profileName.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
-  openModal(porfileEditModal);
-});
+profileEditBtn.addEventListener("click", openEditProfileModal);
 
 profileCloseBtn.addEventListener("click", () => {
   closeModal(porfileEditModal);
