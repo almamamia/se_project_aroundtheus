@@ -104,7 +104,6 @@ function getCardElement(cardData) {
 
 //event handlers
 function fillProfileForm(e) {
-  console.log(profileName.textContent);
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
 }

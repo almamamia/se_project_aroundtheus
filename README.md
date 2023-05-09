@@ -28,4 +28,4 @@ This the product design layout for the project.
 - [Link to the project on Github](https://github.com/almamamia/se_project_aroundtheus)
 - [Deployed page link] (https://almamamia.github.io/se_project_aroundtheus/)
 
-Thank you for positive feedback and thoroguh notes on the code! Appreciate tons! Hopefully I didn't miss anything but please let me know if I did! Thank you!!
+Thank you again for the notes! Webiste is looking much better with proper transitinos in!

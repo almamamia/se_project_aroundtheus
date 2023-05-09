@@ -43,6 +43,9 @@
 
   border: 1px solid white;
   background: transparent url(../images/edit_icon.svg) center no-repeat;
+
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .profile__edit-button:hover {
@@ -77,6 +80,8 @@
   border-radius: 2px;
 
   background: transparent url(../images/add_icon.svg) center no-repeat;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .profile__add-button:hover {
