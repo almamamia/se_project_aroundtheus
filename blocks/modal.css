@@ -1,4 +1,4 @@
-.modal {
+.popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,23 +14,23 @@
   transition: all 0.3s ease;
 }
 
-.modal_opened {
+.popup_opened {
   visibility: visible;
   opacity: 1;
   pointer-events: all;
 }
 
-.modal__container {
+.popup__container {
   position: relative;
   background-color: #fff;
   margin: auto;
-  padding: 22px;
+  padding: 36px;
   border-radius: 10px;
 
   width: 430px;
 }
 
-.modal__preview-container {
+.popup__preview-container {
   padding: 0;
   margin: auto;
   background: transparent;
@@ -39,14 +39,14 @@
   border-radius: 10px;
 }
 
-.modal__preview-image {
+.popup__preview-image {
   margin: auto;
   max-width: 75vw;
   max-height: 75vh;
   padding-bottom: 10px;
 }
 
-.modal__close {
+.popup__close {
   border: none;
   padding: none;
 
@@ -64,12 +64,12 @@
   transition: opacity 0.5s ease;
 }
 
-.modal__close:hover {
+.popup__close:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-.modal__heading {
+.popup__heading {
   font-family: Inter;
   font-size: 24px;
   font-weight: 900;
@@ -82,7 +82,7 @@
   padding-bottom: 54px;
 }
 
-.modal__form {
+.popup__form {
   color: #000;
   display: flex;
   flex-direction: column;
@@ -96,8 +96,9 @@
   text-align: left;
 }
 
-.modal__input {
+.popup__input {
   width: 100%;
+  padding-bottom: 14px;
 
   border-top: none;
   border-left: none;
@@ -109,13 +110,37 @@ input {
   height: 27px;
 }
 
-.modal__input-description,
-.modal__input-link {
-  padding: none;
-  margin-top: 57px;
+.popup__input-description,
+.popup__input-link {
+  margin-top: 30px;
 }
 
-.modal__button {
+.popup__error {
+  height: 12px;
+  color: #ff0000;
+
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+  transition: opacity 0.5s ease;
+  align-self: flex-start;
+  margin-top: 5px;
+  max-height: 12px;
+  opacity: 0;
+}
+
+.popup__error_visible {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.popup__input_type_error {
+  border-bottom: 1px solid rgba(225, 0, 0, 1);
+}
+
+.popup__button {
   background-color: #000;
   color: #fff;
   border: none;
@@ -135,46 +160,50 @@ input {
   transition: opacity 0.5s ease;
 }
 
-.modal__button:hover {
+.popup__button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-.modal__preview-name {
+.popup__button_disabled {
+  opacity: 0.2;
+}
+
+.popup__preview-name {
   margin: 0;
 
   background: transparent;
   font-family: Inter;
   font-size: 12px;
-  font-weight: 400;
+  font-weisght: 400;
   line-height: 1.2;
   letter-spacing: 0em;
   text-align: left;
 }
 
 @media screen and (max-width: 480px) {
-  .modal__heading {
+  .popup__heading {
     font-size: 18px;
   }
-  .modal__button {
+  .popup__button {
     font-size: 14px;
     max-width: 238px;
   }
 
-  .modal__input-link {
+  .popup__input-link {
     margin-top: 30px;
   }
 }
 
 @media screen and (max-width: 630px) {
-  .modal__close {
+  .popup__close {
     left: calc(100% - 26px);
     bottom: calc(100% + 13px);
     width: 26px;
     height: 26px;
   }
 
-  .modal__close_preview-image {
+  .popup__close_preview-image {
     left: 100%;
     bottom: calc(100% + 5px);
   }
