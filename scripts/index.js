@@ -24,9 +24,10 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
+
 //========================elements==========================\\
 
-const popupContainer = document.querySelectorAll(".popup__container");
+const popups = document.querySelectorAll(".popup");
 
 //profile edit elements
 const profileEditBtn = document.querySelector(".profile__edit-button");
@@ -38,15 +39,16 @@ const profileNameInput = document.querySelector("#form-input-name");
 const profileDescriptionInput = document.querySelector(
   "#form-input-description"
 );
-const profileEditForm = profileEditPopup.querySelector(".popup__form");
+const profileEditForm = document.forms["profile-form"];
 
 //add-card elements
 const addCardBtn = document.querySelector(".profile__add-button");
 const addCardPopup = document.querySelector("#add-card-popup");
 const addCardCloseBtn = addCardPopup.querySelector(".popup__close");
-const addCardForm = addCardPopup.querySelector(".popup__form");
+const addCardForm = document.forms["card-form"];
 const cardTitleInput = addCardPopup.querySelector(".popup__input-title");
 const cardImageInput = addCardPopup.querySelector(".popup__input-link");
+const cardSubmitBtn = addCardForm.querySelector(".popup__button");
 
 //card elements
 const cardTemplate =
@@ -58,22 +60,22 @@ const previewImagePopup = document.querySelector("#preview-image-popup");
 const previewImageCloseBtn = previewImagePopup.querySelector(".popup__close");
 
 //================functions======================\\
+
+function closeByEsacpe(evt) {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup_opened");
+    closePopup(openedPopup);
+  }
+}
+
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
-  document.addEventListener("keyup", (e) => {
-    if (e.key === "Escape") {
-      closePopup(popup);
-    }
-  });
+  document.removeEventListener("keydown", closeByEsacpe);
 }
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
-  document.addEventListener("keyup", (e) => {
-    if (e.key === "Escape") {
-      closePopup(popup);
-    }
-  });
+  document.addEventListener("keydown", closeByEsacpe);
 }
 
 function renderCard(cardData, wrapper) {
@@ -139,50 +141,38 @@ function handleAddCardSubmit(e) {
   const link = cardImageInput.value;
   renderCard({ name, link }, cardListEl);
   closePopup(addCardPopup);
+
   addCardForm.reset();
+
+  //ended up doing this on the toggleSumbitButton function
+  // if (cardTitleInput.value === "" && cardImageInput.value === "") {
+  //   cardSubmitBtn.classList.add("popup__button_disabled");
+  //   cardSubmitBtn.disabled = true;
+  // }
 }
 
 //==============================event listeners===========================\\
 //profile edit
-
 profileEditBtn.addEventListener("click", openEditProfilePopup);
-
-profileCloseBtn.addEventListener("click", () => {
-  closePopup(profileEditPopup);
-});
-
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 //add new card
 addCardBtn.addEventListener("click", () => {
   openPopup(addCardPopup);
 });
-
-addCardCloseBtn.addEventListener("click", () => {
-  closePopup(addCardPopup);
-});
-
 addCardForm.addEventListener("submit", handleAddCardSubmit);
-
 initialCards.forEach((cardData) => {
   renderCard(cardData, cardListEl);
 });
 
-//preview image
-previewImageCloseBtn.addEventListener("click", () => {
-  closePopup(previewImagePopup);
-});
-
-//close Popups
-function overlayClosePopup(formElement) {
-  document.addEventListener("click", (e) => {
-    if (
-      e.target.classList.contains("popup") ||
-      e.target.classList.contains("popup__opened")
-    ) {
-      closePopup(e.target);
+//combining overlay and close button listener
+popups.forEach((popup) => {
+  popup.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("popup_opened")) {
+      closePopup(popup);
+    }
+    if (evt.target.classList.contains("popup__close")) {
+      closePopup(popup);
     }
   });
-}
-
-overlayClosePopup();
+});

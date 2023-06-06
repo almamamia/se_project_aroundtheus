@@ -56,8 +56,10 @@ const toggleSubmitButton = (
   { inactiveButtonClass }
 ) => {
   if (hasInvalidInput(inputList)) {
+    buttonElement.disabled = true;
     buttonElement.classList.add(inactiveButtonClass);
   } else {
+    buttonElement.disabled = false;
     buttonElement.classList.remove(inactiveButtonClass);
   }
 };
@@ -70,7 +72,11 @@ const setEventListeners = (formElement, settings) => {
   const inputList = [...formElement.querySelectorAll(inputSelector)];
   const buttonElement = formElement.querySelector(submitButtonSelector);
 
-  toggleSubmitButton(inputList, buttonElement, settings);
+  formElement.addEventListener("reset", () => {
+    setTimeout(() => {
+      toggleSubmitButton(inputList, buttonElement, settings);
+    }, 0);
+  });
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
@@ -95,15 +101,3 @@ const enableValidation = (settings) => {
 };
 
 enableValidation(settings);
-
-//Resetting form validation for later
-
-// function resetValidation(formElement, settings) {
-//   const { inputSelector } = settings;
-//   const { submitButtonSelector } = settings;
-//   const inputList = [...formElement.querySelectorAll(inputSelector)];
-//   const buttonElement = formElement.querySelector(submitButtonSelector);
-//   console.log(inputList);
-//   console.log(buttonElement);
-//   toggleSubmitButton(inputList, buttonElement, settings);
-// }
