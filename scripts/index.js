@@ -60,10 +60,20 @@ const previewImageCloseBtn = previewImagePopup.querySelector(".popup__close");
 //================functions======================\\
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.addEventListener("keyup", (e) => {
+    if (e.key === "Escape") {
+      closePopup(popup);
+    }
+  });
 }
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keyup", (e) => {
+    if (e.key === "Escape") {
+      closePopup(popup);
+    }
+  });
 }
 
 function renderCard(cardData, wrapper) {
@@ -104,27 +114,6 @@ function getCardElement(cardData) {
 
   return cardElement;
 }
-
-// const escEvent = (evt) => {
-//   const activePopup = document.querySelector("popup__opened");
-//   console.log(activePopup);
-//   if (evt.key == 27) {
-//     console.log("pressed");
-//   }
-// };
-
-// escEvent();
-
-// window.addEventListener("keydown", (e) => {
-//   const openPopup = document.querySelectorAll(".popup_opened");
-//   console.log(openPopup);
-
-//   if (e.key === "Escape") {
-//     const openPopup = document.querySelectorAll(".popup_opened");
-//     console.log("pressed");
-//     closePopup(openPopup);
-//   }
-// });
 
 //event handlers
 function fillProfileForm(e) {
@@ -184,35 +173,16 @@ previewImageCloseBtn.addEventListener("click", () => {
   closePopup(previewImagePopup);
 });
 
-//cloing modals
+//close Popups
+function overlayClosePopup(formElement) {
+  document.addEventListener("click", (e) => {
+    if (
+      e.target.classList.contains("popup") ||
+      e.target.classList.contains("popup__opened")
+    ) {
+      closePopup(e.target);
+    }
+  });
+}
 
-// function closeModalEsc(evt) {
-//   const activePopup = document.querySelectorAll(".popeup_opened");
-//   if (evt.key === "Escape") {
-//     console.log("pressed");
-
-//     closePopup(activePopup);
-//   }
-// }
-
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closePopup(profileEditPopup);
-  }
-});
-
-profileEditForm.addEventListener("dbclick", (e) => {
-  console.log("doubleclicked");
-  closePopup(profileEditPopup);
-});
-
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closePopup(addCardPopup);
-  }
-});
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closePopup(previewImagePopup);
-  }
-});
+overlayClosePopup();

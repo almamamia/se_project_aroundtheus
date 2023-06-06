@@ -18,6 +18,7 @@
   visibility: visible;
   opacity: 1;
   pointer-events: all;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .popup__container {
@@ -166,6 +167,14 @@ input {
 }
 
 .popup__button_disabled {
+  opacity: 0.2;
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #000;
+  cursor: default;
+}
+
+.popup__button_disabled:hover {
   opacity: 0.2;
 }
 

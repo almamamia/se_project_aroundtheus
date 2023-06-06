@@ -1,6 +1,3 @@
-// enabling validation by calling enableValidation()
-// pass all the settings on call
-
 const settings = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -10,8 +7,7 @@ const settings = {
   errorClass: "popup__error_visible",
 };
 
-//want to create a global validation functions to check inputs
-
+//create a global validation functions to check inputs
 const showInputError = (formElement, inputElement, settings) => {
   const { inputErrorClass } = settings;
   const { errorClass } = settings;
@@ -69,13 +65,13 @@ const toggleSubmitButton = (
 //adding handlers to all form fields
 
 const setEventListeners = (formElement, settings) => {
-  //const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector));
   const { inputSelector } = settings;
   const { submitButtonSelector } = settings;
   const inputList = [...formElement.querySelectorAll(inputSelector)];
   const buttonElement = formElement.querySelector(submitButtonSelector);
 
   toggleSubmitButton(inputList, buttonElement, settings);
+
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
       isValid(formElement, inputElement, settings);
@@ -88,7 +84,6 @@ const setEventListeners = (formElement, settings) => {
 //adding handlers to all forms
 
 const enableValidation = (settings) => {
-  //const formList = Array.from(document.querySelectorAll(".modal__form"));
   const formList = [...document.querySelectorAll(settings.formSelector)];
 
   formList.forEach((formElement) => {
@@ -100,3 +95,15 @@ const enableValidation = (settings) => {
 };
 
 enableValidation(settings);
+
+//Resetting form validation for later
+
+// function resetValidation(formElement, settings) {
+//   const { inputSelector } = settings;
+//   const { submitButtonSelector } = settings;
+//   const inputList = [...formElement.querySelectorAll(inputSelector)];
+//   const buttonElement = formElement.querySelector(submitButtonSelector);
+//   console.log(inputList);
+//   console.log(buttonElement);
+//   toggleSubmitButton(inputList, buttonElement, settings);
+// }
