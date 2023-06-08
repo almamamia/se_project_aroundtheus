@@ -28,4 +28,4 @@ This the product design layout for the project.
 - [Link to the project on Github](https://github.com/almamamia/se_project_aroundtheus)
 - [Deployed page link] (https://almamamia.github.io/se_project_aroundtheus/)
 
-THANK YOU SO MUCH FOR such a detailed feedback! I was struggling on why form.resst wasn't working properly but adding eventlistener on "reset" really helped. Hopefully I didn't miss any comments but lmk if I did. Thanks agian!
+Thank you!
