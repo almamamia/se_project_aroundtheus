@@ -15,10 +15,11 @@ export default class Card {
   }
 
   _setEvenetListeners() {
-    const likeButton = this._cardElement.querySelector(".card__like-button");
-    likeButton.addEventListener("click", () => {
-      this._handleLikeButton();
-    });
+    this._cardElement
+      .querySelector(".card__like-button")
+      .addEventListener("click", () => {
+        this._handleLikeButton();
+      });
 
     const deleteButton = this._cardElement.querySelector(
       ".card__delete-button"
@@ -52,7 +53,9 @@ export default class Card {
   }
 
   _handleLikeButton() {
-    likeButton.classList.toggle("card__like-button_active");
+    this._cardElement
+      .querySelector(".card__like-button")
+      .classList.toggle("card__like-button_active");
   }
 
   _handleDeleteButton() {
