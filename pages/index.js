@@ -32,7 +32,6 @@ const initialCards = [
 //========================elements==========================\\
 
 const popups = document.querySelectorAll(".popup");
-
 //profile edit elements
 const profileEditBtn = document.querySelector(".profile__edit-button");
 const profileEditPopup = document.querySelector("#profile-edit-popup");
@@ -55,11 +54,16 @@ const cardImageInput = addCardPopup.querySelector(".popup__input-link");
 const cardListEl = document.querySelector(".cards__list");
 
 //================functions======================\\
+function createCard(cardData, cardSelector) {
+  const card = new Card(cardData, cardSelector);
+  return card;
+}
 
-function renderNewCard(cardData, wrapper) {
-  const card = new Card(cardData, ".card-template_type_default");
+function renderNewCard(cardData, cardList) {
+  const card = createCard(cardData, ".card-template_type_default");
   const cardElement = card.generateCard();
-  wrapper.prepend(cardElement);
+
+  cardList.prepend(cardElement);
 }
 
 function fillProfileForm(e) {
@@ -134,10 +138,9 @@ popups.forEach((popup) => {
 
 initialCards.forEach((item) => {
   //create a card instance
-  const card = new Card(item, ".card-template_type_default");
+  const card = createCard(item, ".card-template_type_default");
   //fill up the card and return it
   const cardElement = card.generateCard();
-
   //add it to the DOM
   cardListEl.prepend(cardElement);
 });
