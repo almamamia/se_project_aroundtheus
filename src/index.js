@@ -76,12 +76,13 @@ previewImagePopup.close();
 //=======================Render initial cards=====================\\
 //create a card instance
 function createCard(data) {
-  const cardElement = new Card({ data }, ".card-template_type_default", {
-    handleCardClick: (cardImage) => {
+  const cardElement = new Card(
+    { data },
+    ".card-template_type_default",
+    (cardImage) => {
       previewImagePopup.open(cardImage);
-    },
-  });
-  //console.log(cardElement);
+    }
+  );
   return cardElement.generateCard();
 }
 //card elements
@@ -93,13 +94,12 @@ const cardSection = new Section(
     items: initialCards,
     renderer: (data) => {
       const cardElement = createCard(data);
-      //cardListEl.prepend(cardElement);
+      cardSection.addItem(cardElement);
     },
   },
   cardListEl
 );
 
-console.log(cardSection);
 //render initial cards
 cardSection.renderItems(initialCards);
 

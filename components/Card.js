@@ -48,10 +48,6 @@ export default class Card {
   }
 
   _getTemplate() {
-    console.log(this._cardSelector);
-    // const cardTemplateTest = document.querySelector(this._cardSelector);
-    // console.log(cardTemplateTest);
-
     const cardTemplate = document
       .querySelector(this._cardSelector)
       .content.querySelector(".card")
