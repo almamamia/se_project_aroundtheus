@@ -13,10 +13,10 @@ export default class PopupWithForm extends Popup {
     super.setEventListeners();
   }
 
-  open(name, link) {
-    this._previewImage.src = link;
-    this._previewImage.alt = name;
-    this._previewName.textContent = name;
+  open(cardImage) {
+    this._previewImage.src = cardImage.link;
+    this._previewImage.alt = cardImage.name;
+    this._previewName.textContent = cardImage.name;
     super.open();
   }
 }

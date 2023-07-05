@@ -1,15 +1,7 @@
-import { openPopup } from "../utils/utils.js";
-
-//========================Preview Image Popup==========================\\
-// const previewImagePopup = document.querySelector("#preview-image-popup");
-// const previewImage = previewImagePopup.querySelector(".popup__preview-image");
-
-//========================Card Class==========================\\
-
 export default class Card {
-  constructor({ name, link }, cardSelector, { handleCardClick }) {
-    this._name = name;
-    this._link = link;
+  constructor({ cardData, handleCardClick }, cardSelector) {
+    this._name = cardData.name;
+    this._link = cardData.link;
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
   }
@@ -24,14 +16,6 @@ export default class Card {
     this._cardElement = null;
   }
 
-  // _handlePreviewImage() {
-  //   previewImage.src = this._link;
-  //   previewImage.alt = this._name;
-  //   previewImagePopup.querySelector(".popup__preview-name").textContent =
-  //     this._name;
-  //   openPopup(previewImagePopup);
-  // }
-
   //=================Event Listeners==========================\\
   _setEvenetListeners() {
     this._likeButton.addEventListener("click", () => {
@@ -43,10 +27,11 @@ export default class Card {
     });
 
     this._cardImage.addEventListener("click", () => {
-      this._handleCardClick();
+      this._handleCardClick({ link: this._link, name: this._name });
     });
   }
 
+  //=============Generate Card==========================\\
   _getTemplate() {
     const cardTemplate = document
       .querySelector(this._cardSelector)
@@ -56,7 +41,6 @@ export default class Card {
     return cardTemplate;
   }
 
-  //=============Generate Card==========================\\
   generateCard() {
     //get the card template
     this._cardElement = this._getTemplate();
@@ -69,7 +53,7 @@ export default class Card {
     //add data
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
-    this._cardElement.querySelector(".card__title").textContent = this._name;
+    this._cardElement.querySelector(".card__name").textContent = this._name;
 
     //set event listeners
     this._setEvenetListeners();

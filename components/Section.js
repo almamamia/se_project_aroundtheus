@@ -6,9 +6,6 @@ export default class Section {
   }
 
   renderItems() {
-    // console.log(this._items);
-    // console.log(this._cardSelector);
-    // console.log(this._renderer);
     this._items.forEach((item) => {
       this._renderer(item);
     });
