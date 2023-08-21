@@ -127,6 +127,10 @@ input {
   margin-top: 30px;
 }
 
+.popup__input-avatar-link {
+  padding: 0;
+}
+
 .popup__error {
   height: 12px;
   color: #ff0000;
