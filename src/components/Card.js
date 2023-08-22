@@ -1,17 +1,26 @@
 export default class Card {
   constructor(
-    { cardData, handleCardClick, handleDeleteSubmit, handleCardLike },
+    {
+      cardData,
+      handleCardClick,
+      handleDeleteSubmit,
+      handleCardLike,
+      changeCardLike,
+    },
     cardSelector
   ) {
+    this._cardData = cardData;
+    this._cardIsLiked = cardData.isLiked;
     this._name = cardData.name;
     this._link = cardData.link;
     this._cardID = cardData._id;
-    this._userID = cardData._userID;
-    this._cardLike = cardData.likes;
+    this._userID = cardData.owner._id;
+    //this._cardLikes = cardData.likes;
 
     this._handleCardClick = handleCardClick;
     this._handleDeleteSubmit = handleDeleteSubmit;
     this._handleCardLike = handleCardLike;
+    this._changeCardLike = changeCardLike;
     this._cardSelector = cardSelector;
   }
 
@@ -25,13 +34,28 @@ export default class Card {
     this._cardElement = null;
   }
 
-  _updateCardLike(cardLike) {
-    this._cardLike = cardLike;
+  isLiked() {
+    if (!this._cardIsLiked) {
+      return true;
+    } else {
+      return false;
+    }
   }
+
+  _updateIsLiked(cardID) {
+    if (this.isLiked(cardID)) {
+      this._cardIsLiked = "true";
+      this._handleLikeButton();
+    } else {
+      this._cardIsLiked = "false";
+      this._handleLikeButton();
+    }
+  }
+
   //=================Event Listeners==========================\\
   _setEvenetListeners() {
     this._likeButton.addEventListener("click", () => {
-      this._handleLikeButton();
+      this._updateIsLiked(this._cardID);
     });
 
     this._deleteButton.addEventListener("click", () => {

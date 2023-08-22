@@ -30,8 +30,8 @@ export default class Api {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
-        name: "Marie Skłodowska Curie",
-        about: "Physicist and Chemist",
+        name: userData.name,
+        about: userData.about,
       }),
     }).then(this._checkServerRes);
   }
@@ -80,6 +80,14 @@ export default class Api {
       body: JSON.stringify({
         avatar: inputValues.link,
       }),
+    }).then(this._checkServerRes);
+  }
+
+  // 06. change card like in the server
+  changeCardLike(cardID) {
+    return fetch(`${this._baseUrl}/cards/${cardID}/likes`, {
+      method: "DELETE",
+      headers: this._headers,
     }).then(this._checkServerRes);
   }
 }
