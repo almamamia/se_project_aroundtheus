@@ -18,7 +18,7 @@
     <div class="page__content">
       <header class="header">
         <img
-          src="<%=require('./images/logo_v02.svg')%>"
+          src="<%= require('./images/logo_v02.svg') %>"
           alt="Around the U.S logo"
           class="logo"
         />
@@ -31,7 +31,13 @@
             alt="Profile image"
             class="profile__image"
           />
-
+          <div class="profile__image-overlay">
+            <img
+              src="<%=require('./images/edit-profile-button.svg')%>"
+              alt="edit-avatar"
+              class="profile__image-edit-icon"
+            />
+          </div>
           <div class="profile__info">
             <h1 class="profile__name">Jacques Cousteau</h1>
             <button
@@ -58,7 +64,7 @@
       </footer>
     </div>
 
-    <!--Edit popup-->
+    <!--Profile Edit popup-->
     <div class="popup" id="profile-edit-popup">
       <div class="popup__container">
         <button class="popup__close" type="button"></button>
@@ -131,6 +137,42 @@
         ></button>
         <img src="#" alt="" class="popup__preview-image" />
         <h4 class="popup__preview-name"></h4>
+      </div>
+    </div>
+
+    <!--Delete Card popup-->
+    <div class="popup" id="delete-card-popup">
+      <div class="popup__container">
+        <button
+          class="popup__close popup__close_delete-card"
+          type="button"
+        ></button>
+
+        <h3 class="popup__heading-confirm">Are you sure?</h3>
+        <button class="button popup__confirm-button" type="submit">Yes</button>
+      </div>
+    </div>
+
+    <!--Update Profile Avatar popup-->
+    <div class="popup" id="edit-avatar-popup">
+      <div class="popup__container">
+        <button
+          class="popup__close popup__close_edit-avatar"
+          type="button"
+        ></button>
+        <h3 class="popup__heading">Change profile picture</h3>
+        <form class="popup__form" name="card-form">
+          <input
+            type="url"
+            name="link"
+            class="popup__input popup__input-avatar-link"
+            placeholder="Image link"
+            id="form-input-link"
+            required
+          />
+          <span class="popup__error" id="form-input-link-error"></span>
+          <button class="button popup__button" type="submit">Save</button>
+        </form>
       </div>
     </div>
 
