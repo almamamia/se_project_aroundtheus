@@ -45,25 +45,25 @@ function createCard(data) {
         deleteCardPopup.open();
       },
       handleCardLike: (cardID) => {
-        api
-          .likeCard(cardID)
-          .then(() => {
-            cardElement.updateCardLikes(cardData.likes);
-          })
-          .catch((err) => console.error(err));
-      },
-      handleCardUnlike: (cardID) => {
-        api
-          .unlikeCard(cardID)
-          .then(() => {
-            cardElement.updateCardLikes(cardData.likes);
-          })
-          .catch((err) => console.error(err));
+        if (cardElement._cardIsLiked) {
+          return api
+            .unlikeCard(cardID)
+            .then((res) => {
+              cardElement.updateIsLiked(res.isLiked);
+            })
+            .catch((err) => console.error(err));
+        } else {
+          return api
+            .likeCard(cardID)
+            .then((res) => {
+              cardElement.updateIsLiked(res.isLiked);
+            })
+            .catch((err) => console.error(err));
+        }
       },
     },
     ".card-template_type_default"
   );
-
   return cardElement.generateCard();
 }
 
@@ -124,7 +124,6 @@ const addCardPopup = new PopupWithForm(
       .catch((err) => console.error(err))
       .finally(() => {
         addCardPopup.hideLoading();
-        addCardBtn.removeEventListener("click", () => {});
       });
   },
   "Creating..."
@@ -177,8 +176,9 @@ const profileEditPopup = new PopupWithForm(
   //handleFormSumit
   (data) => {
     profileEditPopup.showLoading();
+
     api
-      .editProfile()
+      .editProfile(data)
       .then(() => {
         userInfo.setUserInfo(data.name, data.description);
         profileEditPopup.close();
